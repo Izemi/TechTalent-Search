@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Oops...
+{% endblock %}
+
+{% block main %}
+    <div class="apology">
+        <h1>Oops... We Hit a Snag!</h1>
+        <p><strong>Details:</strong> {{ top }}</p>
+        <p>{{ bottom }}</p>
+        <p>Feel free to navigate back or try again later.</p>
+    </div>
+{% endblock %}

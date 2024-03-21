@@ -1,0 +1,14 @@
+---
+:id: 219253812
+:submitters:
+- :name: Kevin Rusagara
+  :email: kevin.rusagara@yale.edu
+- :name: Emile Izere
+  :email: emile.izere@yale.edu
+:created_at: !ruby/object:ActiveSupport::TimeWithZone
+  utc: 2023-12-11 05:04:16.095854000 Z
+  zone: !ruby/object:ActiveSupport::TimeZone
+    name: America/Los_Angeles
+  time: 2023-12-10 21:04:16.095854000 Z
+:status: processed
+:score: 14.0

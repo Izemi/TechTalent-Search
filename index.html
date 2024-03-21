@@ -1,0 +1,71 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Portfolio
+{% endblock %}
+
+{% block main %}
+    <tbody>
+        <h1>Programming Jobs in the U.S</h1>
+        <form action="/search" method="get">
+            <style>
+                select#keywords,
+                select#location {
+                    width: 200px;
+                /* Adjusts the width of the dropdown */
+                    padding: 5px;
+                /* Adds padding inside the dropdown */
+                    border: 1px solid #ccc;
+                /* Sets the border color and width */
+                    border-radius: 4px;
+                /* Rounds the corners of the dropdown */
+                    margin-bottom: 10px;
+                /* Space below the dropdown */
+                }
+
+                button#filter-button {
+                    padding: 5px 10px;
+                    background-color: #4CAF50;
+                    color: white;
+                    border: none;
+                    border-radius: 4px;
+                    cursor: pointer;
+                }
+
+                button#filter-button:hover {
+                    background-color: #45a049;
+                }
+            </style>
+            <label for="keywords">Keywords:</label>
+            <select id="keywords" name="keywords">
+                <option value="">Select a keyword</option>
+                <option value="software">Software</option>
+                <option value="web">Web</option>
+                <option value="data">Data</option>
+                <option value="engineer">Engineer</option>
+                <option value="data">Data</option>
+                <option value="ux">UX</option>
+                <option value="developer">Developer</option>
+                <option value="scrum">Scrum</option>
+                <option value="seo">SEO</option>
+                <option value="administrator">Administrator</option>
+                <option value="designer">Designer</option>
+                <option value="analyst">Analyst</option>
+                <option value="management">Management</option>
+                <option value="architect">Architect</option>
+                <option value="researcher">Researcher</option>
+                <option value="creator">Creator</option>
+                <option value="scientist">Scientist</option>
+                <option value="cryptographer">Cryptographer</option>
+
+            <!-- Add more options here as needed -->
+            </select>
+            <button type="submit" id="filter-button">Search</button>
+        </form>
+
+        <div class="image-container" style="display: table; clear: both; margin-left: 256px">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8QW3R_-eOUOCseZ_Z1q8krlfiHw2_SdygHw&usqp=CAU" alt="Image 1" class="header-image" style="float:left; padding: 5px">
+            <img src="https://www.simplilearn.com/ice9/free_resources_article_thumb/Surveys_Reveal_Top_Trending_Tech_Jobs_and_Skills_in_Mid_2021.jpg" alt="Image 2" class="header-image" style="float:left; padding: 5px; height:205px; width: 270px">
+        </div>
+    </tbody>
+{% endblock %}

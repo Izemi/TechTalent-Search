@@ -1,0 +1,82 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Search Results
+{% endblock %}
+
+{% block main %}
+    <h1 style="font-weight: 900; color: #0056b3; font-size: 35px;">Your dream job is here!</h1>
+    <div class="jobs-grid">
+        {% if jobs %}
+            {% for job in jobs %}
+                <div class="job-card">
+                    <style>
+                        .jobs-grid {
+                            display: grid;
+                            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                            grid-gap: 20px;
+                            padding: 20px;
+                        }
+
+                        .job-card {
+                            background-color: #fff;
+                            border: 1px solid #ddd;
+                            border-radius: 8px;
+                            padding: 20px;
+                            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                            transition: transform 0.2s;
+                        }
+
+                        .job-card:hover {
+                            transform: scale(1.03);
+                            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+                        }
+
+                        .job-card h3 {
+                            color: #333;
+                            margin-top: 0;
+                        }
+
+                        .job-card h4 {
+                            color: #555;
+                            margin-top: 0;
+                            font-weight: normal;
+                        }
+
+                        .location {
+                            font-style: italic;
+                            color: #777;
+                            font-size: 0.9em;
+                        }
+
+                        .apply-button {
+                            display: inline-block;
+                            margin-top: 15px;
+                            padding: 10px 15px;
+                            background-color: #007bff;
+                            color: white;
+                            text-decoration: none;
+                            border-radius: 4px;
+                            text-align: center;
+                        }
+
+                        .apply-button:hover {
+                            background-color: #0056b3;
+                        }
+                    </style>
+                    <h3>{{ job.JobTitle }}</h3>
+                    <h4>{{ job.Company }}</h4> <!-- Assuming you have a Company field -->
+                    <p class="location">{{ job.Location }}</p>
+                    <p>{{ job.JobDescription }}</p>
+                    <a class="apply-button" href="{{ job.ApplicationLink }}">Apply Now</a>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>No jobs found matching your criteria.</p>
+        {% endif %}
+    </div>
+{% endblock %}
+
+{% block styles %}
+
+{% endblock %}

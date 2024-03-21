@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Log In
+{% endblock %}
+
+{% block main %}
+    <script>
+        function validateUsername() {
+            var username = document.getElementById('username').value;
+            var message = document.getElementById('message');
+
+            if (!username.endsWith('.cs50')) {
+                message.textContent = 'Your username should match name.cs50';
+                message.style.color = 'red';
+                return false;
+            } else {
+                message.textContent = '';
+            }
+            return true;
+        }
+    </script>
+
+    <form action="/login" method="post" onsubmit="return validateUsername()">
+        <div class="form-group">
+            <input autocomplete="off" autofocus required class="form-control" id="username" name="username" placeholder="Username" type="text">
+            <span id="message"></span>
+        </div>
+        <div class="form-group">
+            <input required class="form-control" name="password" placeholder="Password" type="password">
+        </div>
+        <button class="btn btn-primary" type="submit">Log In</button>
+    </form>
+{% endblock %}
